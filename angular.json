@@ -119,6 +119,46 @@
           }
         }
       }
+    },
+    "ng-copy-to-clipboard": {
+      "projectType": "library",
+      "root": "projects/ng-copy-to-clipboard",
+      "sourceRoot": "projects/ng-copy-to-clipboard/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/ng-copy-to-clipboard/tsconfig.lib.json",
+            "project": "projects/ng-copy-to-clipboard/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ng-copy-to-clipboard/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ng-copy-to-clipboard/src/test.ts",
+            "tsConfig": "projects/ng-copy-to-clipboard/tsconfig.spec.json",
+            "karmaConfig": "projects/ng-copy-to-clipboard/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ng-copy-to-clipboard/tsconfig.lib.json",
+              "projects/ng-copy-to-clipboard/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }},
   "defaultProject": "copy-to-clipboard"
 }

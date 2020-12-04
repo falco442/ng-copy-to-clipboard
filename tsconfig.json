@@ -1,4 +1,3 @@
-/* To learn more about this file see: https://angular.io/config/tsconfig. */
 {
   "compileOnSave": false,
   "compilerOptions": {
@@ -11,10 +10,16 @@
     "moduleResolution": "node",
     "importHelpers": true,
     "target": "es2015",
-    "module": "es2020",
+    "module": "esnext",
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "ng-copy-to-clipboard": [
+        "dist/ng-copy-to-clipboard/ng-copy-to-clipboard",
+        "dist/ng-copy-to-clipboard"
+      ]
+    }
   }
 }
