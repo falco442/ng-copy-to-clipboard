@@ -3,7 +3,7 @@ import {ClipboardService} from '../service/clipboard.service';
 import {ToastrService} from 'ngx-toastr';
 
 @Directive({
-  selector: '[libCopyToClipboard]'
+  selector: '[libCopyToClipboard]',
 })
 export class CopyToClipboardDirective {
 
@@ -22,7 +22,7 @@ export class CopyToClipboardDirective {
     public el: ElementRef,
     private clipboard: ClipboardService,
     private toastr: ToastrService,
-    private rendered: Renderer2
+    private rendered: Renderer2,
   ) {
     el.nativeElement.style.cursor = 'copy';
     this.originalBorder = this.el.nativeElement.style.border;
@@ -33,7 +33,6 @@ export class CopyToClipboardDirective {
     const text = this.rendered.createText('Copia');
     this.rendered.appendChild(this.newEl, text);
     this.rendered.appendChild(this.el.nativeElement, this.newEl);
-    this.rendered.addClass(this.newEl, 'd-none');
     this.rendered.setStyle(this.newEl, 'background-color', 'lightgray');
     this.rendered.setStyle(this.newEl, 'position', 'absolute');
     this.rendered.setStyle(this.newEl, 'right', '0px');
@@ -43,12 +42,13 @@ export class CopyToClipboardDirective {
     this.rendered.setStyle(this.newEl, 'z-index', '100');
     this.rendered.setStyle(this.newEl, 'max-height', '100%');
     this.rendered.setStyle(this.newEl, 'font-size', '12px');
+    this.rendered.setStyle(this.newEl, 'display', 'none');
   }
 
   @HostListener('click', ['$event.target'])
-  private onClick() {
+  private onClick(): void {
     let str: string;
-    const fn = (par?: any): string => {
+    const fn = (): string => {
       if (this.callback) {
         return this.callback(this.copyToClipBoard);
       }
@@ -65,15 +65,15 @@ export class CopyToClipboardDirective {
   // }
 
   @HostListener('mouseover', ['$event.target'])
-  private createDiv() {
-    this.rendered.removeClass(this.newEl, 'd-none');
+  private createDiv(): void {
+    this.rendered.setStyle(this.newEl, 'display', 'block');
     this.rendered.setStyle(this.el.nativeElement, 'outline', '1px solid lightgray');
     this.rendered.setStyle(this.el.nativeElement, 'outline-offset', '-1px');
   }
 
   @HostListener('mouseout', ['$event.target'])
-  private deleteDiv() {
-    this.rendered.addClass(this.newEl, 'd-none');
+  private deleteDiv(): void {
+    this.rendered.setStyle(this.newEl, 'display', 'none');
     this.rendered.setStyle(this.el.nativeElement, 'outline', this.originalBorder);
     this.rendered.setStyle(this.el.nativeElement, 'outline-offset', this.originalOutlineOffset);
   }
