@@ -3,10 +3,10 @@
   "version": "0.0.1",
   "peerDependencies": {
     "@angular/common": "~8.0.3",
-    "@angular/core": "~8.0.3"
+    "@angular/core": "~8.0.3",
+    "@angular/animations": "~8.0.3",
+    "ngx-toastr": "10.1.0"
   },
   "dependencies": {
-    "ngx-toastr": "10.1.0",
-    "@angular/animations": "~8.0.3"
   }
 }

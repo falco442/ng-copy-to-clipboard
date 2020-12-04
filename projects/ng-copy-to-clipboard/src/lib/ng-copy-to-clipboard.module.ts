@@ -8,7 +8,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [NgCopyToClipboardComponent, CopyToClipboardDirective],
   imports: [
-    ToastrModule.forRoot(),
+    ToastrModule,
     BrowserAnimationsModule
   ],
   exports: [NgCopyToClipboardComponent, CopyToClipboardDirective]

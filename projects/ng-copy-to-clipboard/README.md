@@ -2,9 +2,31 @@
 
 This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.6.
 
-## Step
+## Step 1
 
 Import [Toast](https://github.com/scttcper/ngx-toastr/) SCSS as indicated in [Toastr library instruction](https://github.com/scttcper/ngx-toastr/)
+
+## Step 2
+
+Include **ToastrModule.forRoot()** and **NgCopyToClipboardModule** in your **AppModule**:
+
+```
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    ...
+    NgCopyToClipboardModule,
+    ToastrModule.forRoot(),
+    ...
+  ],
+  providers: [...],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+```
 
 ## Build
 
