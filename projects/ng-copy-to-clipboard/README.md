@@ -2,10 +2,9 @@
 
 This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.6.
 
-## Code scaffolding
+## Step
 
-Run `ng generate component component-name --project ng-copy-to-clipboard` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project ng-copy-to-clipboard`.
-> Note: Don't forget to add `--project ng-copy-to-clipboard` or else it will be added to the default project in your `angular.json` file. 
+Import [Toast](https://github.com/scttcper/ngx-toastr/) SCSS as indicated in [Toastr library instruction](https://github.com/scttcper/ngx-toastr/)
 
 ## Build
 
