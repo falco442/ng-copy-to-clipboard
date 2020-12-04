@@ -13,6 +13,12 @@ export class CopyToClipboardDirective {
   @Input('copyToClipboardCallback')
   public callback: (par?: any) => string;
 
+  @Input()
+  public copiedString = 'Copiato negli Appunti';
+
+  @Input()
+  public copyString = 'Copia';
+
   private newEl: any;
 
   private originalBorder: string;
@@ -30,7 +36,7 @@ export class CopyToClipboardDirective {
     this.rendered.setStyle(el.nativeElement, 'position', 'relative');
     this.toastr.toastrConfig.timeOut = 1000;
     this.newEl = this.rendered.createElement('div');
-    const text = this.rendered.createText('Copia');
+    const text = this.rendered.createText(this.copyString);
     this.rendered.appendChild(this.newEl, text);
     this.rendered.appendChild(this.el.nativeElement, this.newEl);
     this.rendered.setStyle(this.newEl, 'background-color', 'lightgray');
@@ -56,7 +62,7 @@ export class CopyToClipboardDirective {
     };
     str = fn();
     this.clipboard.copy(str);
-    this.toastr.show('Copiato negli Appunti');
+    this.toastr.show(this.copiedString);
   }
 
   // @HostListener('mouseenter', ['$event.target'])
