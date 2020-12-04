@@ -25,6 +25,7 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.800.6",
+    "@angular-devkit/build-ng-packagr": "~0.800.6",
     "@angular/cli": "~8.0.3",
     "@angular/compiler-cli": "~8.0.3",
     "@types/node": "~8.9.4",
@@ -38,11 +39,13 @@
     "karma-coverage-istanbul-reporter": "~2.0.1",
     "karma-jasmine": "~2.0.1",
     "karma-jasmine-html-reporter": "^1.4.0",
-    "ng-packagr": "^10.1.0",
+    "ng-packagr": "^5.1.0",
     "protractor": "~5.4.0",
     "ts-node": "~7.0.0",
+    "tsickle": "^0.35.0",
     "tslint": "~5.15.0",
-    "typescript": "~3.4.3"
+    "typescript": "~3.4.3",
+    "ngx-toastr": "10.1.0"
   },
   "description": "This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.7.",
   "main": "karma.conf.js",
