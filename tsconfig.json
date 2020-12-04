@@ -1,0 +1,25 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "declaration": false,
+    "downlevelIteration": true,
+    "experimentalDecorators": true,
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": [
+      "es2018",
+      "dom"
+    ],
+    "paths": {
+      "ng-copy-to-clipboard": [
+        "dist/ng-copy-to-clipboard/ng-copy-to-clipboard",
+        "dist/ng-copy-to-clipboard"
+      ]
+    }
+  }
+}
